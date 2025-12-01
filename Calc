@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Calculator</title>
+</head>
+<body>
+  <h2>Calculator</h2>
+
+  <input id="num1" type="number" placeholder="First number"> <br><br>
+  <input id="num2" type="number" placeholder="Second number"> <br><br>
+
+  <button onclick="calculate('+')">+</button>
+  <button onclick="calculate('-')">-</button>
+  <button onclick="calculate('*')">*</button>
+  <button onclick="calculate('/')">/</button>
+
+  <h3 id="result">Result: </h3>
+
+  <script>
+    function calculate(op) {
+      const n1 = parseFloat(document.getElementById('num1').value);
+      const n2 = parseFloat(document.getElementById('num2').value);
+      let result = '';
+
+      if (isNaN(n1) || isNaN(n2)) {
+        result = 'Please enter both numbers!';
+      } else {
+        switch(op) {
+          case '+': result = n1 + n2; break;
+          case '-': result = n1 - n2; break;
+          case '*': result = n1 * n2; break;
+          case '/': result = n2 !== 0 ? n1 / n2 : 'Cannot divide by 0';
+        }
+      }
+
+      document.getElementById('result').innerText = 'Result: ' + result;
+    }
+  </script>
+</body>
+</html>
