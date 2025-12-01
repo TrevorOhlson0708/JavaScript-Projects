@@ -1,4 +1,4 @@
-// Fully JavaScript Terminal Calculator
+// JavaScript Basic Simple Calculator
 
 const readline = require('readline').createInterface({
   input: process.stdin,
@@ -34,4 +34,5 @@ readline.question("Enter first number: ", (num1) => {
     });
   });
 });
+
 
