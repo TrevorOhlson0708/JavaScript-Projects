@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Daily Prompt Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div>
+    <h1>Daily Prompt</h1>
+    <p id="prompt">Click the button for a prompt</p>
+    <button onclick="generatePrompt()">New Prompt</button>
+  </div>
+
+  <script>
+    const prompts = [
+      "Write about a moment you wish you could relive.",
+      "Describe a place that feels like home.",
+      "What scares you about the future?",
+      "Write about someone who changed your life.",
+      "What does freedom mean to you?"
+    ];
+
+    function generatePrompt() {
+      const randomIndex = Math.floor(Math.random() * prompts.length);
+      document.getElementById("prompt").textContent = prompts[randomIndex];
+    }
+  </script>
+
+</body>
+</html>
